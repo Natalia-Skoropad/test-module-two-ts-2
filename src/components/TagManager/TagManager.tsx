@@ -42,7 +42,7 @@ export default function TagManager() {
         <input
           className={css.input}
           type="text"
-          placeholder="Start typing…"
+          placeholder="Start typing..."
           value={searchText}
           onChange={updateSearchText}
         />
