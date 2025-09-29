@@ -1,4 +1,4 @@
-import type { AccordionItem } from '../types/AccordionItem';
+import type { AccItem as AccordionItem } from '../types/AccItem';
 
 // ================================================================
 
