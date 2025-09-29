@@ -2,7 +2,8 @@
   "files": [],
 
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "forceConsistentCasingInFileNames": true
   },
 
   "references": [
