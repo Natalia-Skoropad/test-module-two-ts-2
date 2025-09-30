@@ -12,17 +12,18 @@ interface Props {
 // ================================================================
 
 function Accordion({ items }: Props) {
-  const [activeIdx, setActiveIdx] = useState<number | null>(null);
   const uid = useId();
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
-  const toggle = (idx: number) => {
-    setActiveIdx(prev => (prev === idx ? null : idx));
+  const toggle = (elIdx: number) => {
+    setActiveIdx(activeIdx === elIdx ? null : elIdx);
   };
 
   return (
     <div className={css.wrapper}>
       {items.map(({ title, content }, index) => {
         const isOpen = activeIdx === index;
+
         const panelId = `${uid}-panel-${index}`;
         const btnId = `${uid}-btn-${index}`;
 
@@ -92,4 +93,5 @@ function Accordion({ items }: Props) {
 }
 
 export default Accordion;
+
 */

@@ -8,7 +8,7 @@ interface Props {
 
 //===============================================================
 
-export default function CountDisplay({ value }: Props) {
+function CountDisplay({ value }: Props) {
   return (
     <div className={css.box}>
       The current counter value is <span className={css.value}>{value}</span>
@@ -16,14 +16,4 @@ export default function CountDisplay({ value }: Props) {
   );
 }
 
-/*
-interface Props {
-  value: number;
-}
-
-//===============================================================
-
-export default function CountDisplay({ value }: Props) {
-  return <div>The current counter value is {value}</div>;
-}
-*/
+export default CountDisplay;

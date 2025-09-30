@@ -6,17 +6,23 @@ import css from './App.module.css';
 // ================================================================
 
 function App() {
-  const [value, setValue] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [value, setValue] = useState(0);
 
-  const handleVisibility = () => setIsVisible(v => !v);
-  const handleCounterClick = () => setValue(v => v + 1);
+  const handleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
+  const handleCounterClick = () => {
+    setValue(value + 1);
+  };
 
   return (
     <div className="container">
       <h1 className={css.h1}>State in React</h1>
 
       <section className={css.card}>
+        <h2 className={css.h2}>Counter</h2>
         <div className={css.row}>
           <Button
             onClick={handleVisibility}

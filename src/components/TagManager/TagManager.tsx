@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
+
 import css from './TagManager.module.css';
 
 // ================================================================
@@ -24,11 +25,11 @@ export default function TagManager() {
   const [searchText, setSearchText] = useState('');
 
   const deleteTag = (tagName: string) => {
-    setTags(prev => prev.filter(tag => tag !== tagName));
+    setTags(prevTags => prevTags.filter(tag => tag !== tagName));
   };
 
-  const updateSearchText = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value);
+  const updateSearchText = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchText(event.target.value);
   };
 
   const visibleTags = tags.filter(tag =>
@@ -39,6 +40,7 @@ export default function TagManager() {
     <div className={css.wrap}>
       <label className={css.label}>
         <span className={css.labelText}>Search tag:</span>
+
         <input
           className={css.input}
           type="text"
@@ -55,6 +57,7 @@ export default function TagManager() {
           {visibleTags.map(tag => (
             <li className={css.tagItem} key={tag}>
               <span className={css.tagText}>{tag}</span>
+
               <button
                 className={css.closeButton}
                 type="button"
